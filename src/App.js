@@ -3,6 +3,7 @@ import Wrapper from "./components/Wrapper";
 import Screen from "./components/Screen";
 import ButtonBox from "./components/ButtonBox";
 import Button from "./components/Button";
+import ResultScreen from "./components/ResultScreen";
 import { btnValues } from "./utils/buttonValues";
 import { parseCalculatorJsonParse } from "./utils/parseCalculatorJsonParse ";
 
@@ -140,7 +141,7 @@ const App = () => {
 	return (
 		<Wrapper>
 			<Screen value={calculator.equation ? calculator.equation : null} />
-			<Screen value={calculator.result ? calculator.result : null} />
+			<ResultScreen value={calculator.result ? calculator.result : null} />
 			<ButtonBox>
 				{btnValues.flat().map((btn, i) => {
 					return (

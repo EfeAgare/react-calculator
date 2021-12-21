@@ -1,9 +1,8 @@
-// import { Textfit } from "react-textfit";
 import "./Screen.css";
 
 const Screen = ({ value }) => {
 	return (
-		<div className="screen" mode="single" max={70}>
+		<div className="screen" aria-label="value-screen" max={70}>
 			{value}
 		</div>
 	);
