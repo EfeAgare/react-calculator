@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import Wrapper from "./components/Wrapper";
 import InputScreen from "./components/InputScreen";
 import ButtonBox from "./components/ButtonBox";
-import Button from "./components/Button";
 import ResultScreen from "./components/ResultScreen";
-import { btnValues } from "./utils/buttonValues";
 import { parseCalculatorJsonParse } from "./utils/parseCalculatorJsonParse ";
+import { ButtonValues } from "./components/ButtonValues";
 
 const App = () => {
 	// manage state
@@ -16,17 +15,6 @@ const App = () => {
 	let [multiSign, setMultiSign] = useState("");
 	let [modSign, setModSign] = useState("");
 	let [divideSign, setDivideSign] = useState("");
-
-	// manipulate the css class to the signs button
-	const addClassToSignButton = (btn) => {
-		if (btn === "=") {
-			return "equals";
-		} else if (["C", "%", "/", "*", "+", "-"].includes(btn)) {
-			return "sign";
-		} else {
-			return "";
-		}
-	};
 
 	// Handle the signButton ifs
 	const handleSignIfs = (
@@ -55,7 +43,7 @@ const App = () => {
 			const evalResult = parseCalculatorJsonParse(equation);
 			return Number.isInteger(evalResult) ? evalResult : evalResult.toFixed(2);
 		} catch (error) {
-			return "Invalid Value"
+			return "Invalid Value";
 		}
 	};
 
@@ -146,16 +134,9 @@ const App = () => {
 			<InputScreen value={calculator.equation ? calculator.equation : null} />
 			<ResultScreen value={calculator.result ? calculator.result : null} />
 			<ButtonBox>
-				{btnValues.flat().map((btn, i) => {
-					return (
-						<Button
-							key={i}
-							className={addClassToSignButton(btn)}
-							value={btn}
-							onClick={onButtonPress}
-						/>
-					);
-				})}
+				<ButtonValues
+					onButtonPress={onButtonPress}
+				/>
 			</ButtonBox>
 		</Wrapper>
 	);
