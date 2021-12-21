@@ -55,7 +55,7 @@ const App = () => {
 			const evalResult = parseCalculatorJsonParse(equation);
 			return Number.isInteger(evalResult) ? evalResult : evalResult.toFixed(2);
 		} catch (error) {
-			alert("Invalid Mathematical Equation");
+			return "Invalid Value"
 		}
 	};
 
