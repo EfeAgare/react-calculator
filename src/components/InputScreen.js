@@ -1,6 +1,6 @@
 import "./Screen.css";
 
-const Screen = ({ value }) => {
+const InputScreen = ({ value }) => {
 	return (
 		<div className="screen" aria-label="value-screen" max={70}>
 			{value}
@@ -8,4 +8,4 @@ const Screen = ({ value }) => {
 	);
 };
 
-export default Screen;
+export default InputScreen;
