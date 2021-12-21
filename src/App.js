@@ -135,7 +135,7 @@ const App = () => {
 		setCalculator({ equation: equation, result: result });
 	};
 
-	// initialize all states value
+	// initialize all state values
 	const resetClickHandler = () => {
 		setCalculator({ equation: "", result: 0 });
 		setCurrentValue("");
