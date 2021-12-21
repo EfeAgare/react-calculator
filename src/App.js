@@ -67,6 +67,7 @@ const App = () => {
 		setMultiSign("");
 	};
 
+	// Handle zero button press
 	const handlePressZero = (equation, pressedButton) => {
 		if (equation === "" || equation == "0") {
 			return (equation = 0);
@@ -75,6 +76,7 @@ const App = () => {
 		}
 	};
 
+	// Handle all button press
 	const onButtonPress = async (event) => {
 		let equation = calculator.equation;
 		const pressedButton = event.target.innerHTML;
@@ -133,6 +135,7 @@ const App = () => {
 		setCalculator({ equation: equation, result: result });
 	};
 
+	// initialize all states value
 	const resetClickHandler = () => {
 		setCalculator({ equation: "", result: 0 });
 		setCurrentValue("");
