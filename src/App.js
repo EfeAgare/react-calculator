@@ -107,8 +107,8 @@ const App = () => {
 				calculator,
 				pressedButton
 			);
-		} else if (pressedButton === "%") {
-			equation = handleSignIfs(setModSign, modSign, calculator, pressedButton);
+		} else if (pressedButton === "mod") {
+			equation = handleSignIfs(setModSign, modSign, calculator, "%");
 		} else if (pressedButton === "/") {
 			equation = handleSignIfs(
 				setDivideSign,
